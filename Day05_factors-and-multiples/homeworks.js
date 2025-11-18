@@ -42,11 +42,34 @@ function isPerfectNumber(n) {
 }
 
 //5. Find the HCF and LCM of Three Numbers
+function calculateGCD(a, b) {
+  let max = Math.max(a, b);
+  let min = Math.min(a, b);
 
+  while (min !== 0) {
+    let rem = max % min;
+    max = min;
+    min = rem;
+  }
+
+  return max;
+}
+
+function calculateLCM(a, b) {
+  return Math.abs(a * b) / calculateGCD(a, b);
+}
+
+function findLCMAndHCF(a, b, c) {
+  const gcd = calculateGCD(calculateGCD(a, b), c);
+  const lcm = calculateLCM(calculateLCM(a, b), c);
+
+  console.log(`The HCF of ${a}, ${b}, and ${c}: ${gcd}`);
+  console.log(`The LCM of ${a}, ${b}, and ${c}: ${lcm}`);
+}
 
 //Function Call
 factorsCount(24);
 sumOfFactors(12);
 greatestFactor(36);
 isPerfectNumber(28);
-// findLCMAndHCF(8, 12, 16);
+findLCMAndHCF(8, 12, 16);
