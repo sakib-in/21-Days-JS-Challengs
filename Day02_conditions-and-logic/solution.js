@@ -60,7 +60,7 @@ function checkLeapYear(year) {
   }
 }
 
-/************Homework Questions************/
+/************Homework Solution************/
 
 // 1. Check if a Character is Uppercase, Lowercase, Digit, or Special Character
 function checkCharacterType(ch) {
@@ -117,6 +117,7 @@ function calculateIncomeTax(income) {
   );
 }
 
+//Functions Call
 findMaxOfThree(10, 20, 5);
 checkNumberType(-9);
 calculateElectricityBill(230);
